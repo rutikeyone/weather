@@ -1,0 +1,16 @@
+{
+    "example_name_city" : "Bundung",
+    "example_name_country" : "Indonesia",
+    "heavy_rain_text" : "Heavy Rain",
+    "date_example" : "Sunday, 02 Oct",
+    "temperature_example" : "24°",
+    "wind":"wind",
+    "wind_example" : "19 km/h",
+    "feel_like" : "Feel like",
+    "feel_like_example" : "25°",
+    "index_uv" : "Index UV",
+    "index_uv_example" : "2",
+    "pressure" : "pressure",
+    "pressure_example" : "1014 mbar" 
+
+}
