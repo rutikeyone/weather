@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/generated/l10n.dart';
 import 'package:weather_app/presentation/next_screen/details_weather_data_screen.dart';
-
-import 'components/additional_data_item.dart';
-import 'components/location_app.dart';
+import 'components/days_weather_data_item.dart';
+import 'components/days_weather_data_header.dart';
+import 'components/location_app_header.dart';
 import 'components/main_app_bar.dart';
+import 'components/main_data_card.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -117,125 +118,36 @@ class _MainScreenState extends State<MainScreen> {
               const SizedBox(
                 height: 30,
               ),
-              createLocationApp(
+              createLocationAppHeader(
                   context: context,
                   nameCity: S.of(context).example_name_city,
                   nameCountry: S.of(context).example_name_country),
               const SizedBox(
                 height: 30,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).cardColor,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 30),
-                  child: Center(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          "assets/icons/white/cloudy_white.png",
-                          width: 96,
-                          height: 96,
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          S.of(context).heavy_rain_text,
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          S.of(context).date_example,
-                          style: Theme.of(context).textTheme.bodyText2,
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          S.of(context).temperature_example,
-                          maxLines: 1,
-                          style: Theme.of(context).textTheme.headline1,
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Row(
-                          children: [
-                            createAdditionalDataItem(
-                              context: context,
-                              title: additionalData[0].title,
-                              url: additionalData[0].url,
-                              data: additionalData[0].data,
-                            ),
-                            createAdditionalDataItem(
-                              context: context,
-                              title: additionalData[1].title,
-                              url: additionalData[1].url,
-                              data: additionalData[1].data,
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            createAdditionalDataItem(
-                              context: context,
-                              title: additionalData[2].title,
-                              url: additionalData[2].url,
-                              data: additionalData[2].data,
-                            ),
-                            createAdditionalDataItem(
-                              context: context,
-                              title: additionalData[3].title,
-                              url: additionalData[3].url,
-                              data: additionalData[3].data,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+              createMainDataCard(
+                context: context,
+                url: "assets/icons/white/cloudy_white.png",
+                typeWeather: S.of(context).heavy_rain_text,
+                date: S.of(context).date_example,
+                temperature: S.of(context).temperature_example,
+                windData: S.of(context).wind_example,
+                feelLikeData: S.of(context).feel_like_example,
+                indexUvData: S.of(context).index_uv_example,
+                pressureData: S.of(context).pressure_example,
               ),
               const SizedBox(
                 height: 30,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    S.of(context).today_text,
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => DetailsWeatherDataScreen(),
-                        ),
-                      );
-                    },
-                    child: Row(
-                      children: [
-                        Text(
-                          S.of(context).next_sixteen_text,
-                          style: Theme.of(context).textTheme.headline5,
-                        ),
-                        Icon(
-                          Icons.arrow_forward_ios,
-                          size: 22,
-                          color: Theme.of(context).textTheme.headline5!.color,
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
+              createDaysWeatherDataHeader(
+                  context: context,
+                  onNextClick: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => DetailsWeatherDataScreen(),
+                      ),
+                    );
+                  }),
               const SizedBox(
                 height: 10,
               ),
@@ -246,47 +158,11 @@ class _MainScreenState extends State<MainScreen> {
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
                     itemCount: dayTempuratureData.length,
-                    itemBuilder: (context, index) => Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Theme.of(context).disabledColor, width: 1),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Column(
-                            children: [
-                              Text(
-                                dayTempuratureData[index].time,
-                                style: Theme.of(context).textTheme.headline6,
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Image.asset(
-                                dayTempuratureData[index].unselectedUrl,
-                                width: 36,
-                                height: 36,
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                dayTempuratureData[index].temperature,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline6!
-                                    .copyWith(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                    itemBuilder: (context, index) => createDaysWeatherDataItem(
+                      context: context,
+                      time: dayTempuratureData[index].time,
+                      temperature: dayTempuratureData[index].temperature,
+                      url: dayTempuratureData[index].unselectedUrl,
                     ),
                   ),
                 ),

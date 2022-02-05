@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/generated/l10n.dart';
 
+import 'components/day_weather_data_item.dart';
+import 'components/details_app_bar.dart';
+
 class DetailsWeatherDataScreen extends StatelessWidget {
   DetailsWeatherDataScreen({Key? key}) : super(key: key);
 
@@ -109,30 +112,11 @@ class DetailsWeatherDataScreen extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Theme.of(context).cardColor,
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).cardColor,
-          elevation: 0,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
-            iconSize: 20,
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-          title: RichText(
-            text: TextSpan(
-              text: S.of(context).example_name_city + ", ",
-              style:
-                  Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 20),
-              children: [
-                TextSpan(
-                  text: S.of(context).example_name_country,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(fontSize: 18),
-                ),
-              ],
-            ),
-          ),
+        appBar: createDetailsAppBar(
+          context: context,
+          onBackClick: () => Navigator.pop(context),
+          nameCity: S.of(context).example_name_city,
+          nameCountry: S.of(context).example_name_country,
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -158,34 +142,12 @@ class DetailsWeatherDataScreen extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
                   itemCount: daysData.length,
-                  itemBuilder: (context, index) => Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: ListTile(
-                      leading: Image.asset(
-                        daysData[index].url,
-                        width: 28,
-                        height: 28,
-                      ),
-                      title: Text(
-                        daysData[index].date,
-                        style: Theme.of(context).textTheme.bodyText2,
-                      ),
-                      trailing: RichText(
-                        text: TextSpan(
-                          text: daysData[index].maxTemperature + "/",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText2!
-                              .copyWith(fontSize: 22),
-                          children: [
-                            TextSpan(
-                              text: daysData[index].minTemperature,
-                              style: Theme.of(context).textTheme.bodyText2,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                  itemBuilder: (context, index) => createDayWeatherDataItem(
+                    context: context,
+                    url: daysData[index].url,
+                    date: daysData[index].date,
+                    maxTemperature: daysData[index].maxTemperature,
+                    minTemperature: daysData[index].minTemperature,
                   ),
                 ),
               ),
@@ -198,7 +160,6 @@ class DetailsWeatherDataScreen extends StatelessWidget {
 }
 
 //temporary classes
-
 class DayData {
   final String url;
   final String minTemperature;

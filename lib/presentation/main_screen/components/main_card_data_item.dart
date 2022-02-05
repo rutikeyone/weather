@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Expanded createAdditionalDataItem({
+Expanded createMainCardDataItem({
   required BuildContext context,
   required String url,
   required String title,

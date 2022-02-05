@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-RichText createLocationApp({
+RichText createLocationAppHeader({
   required BuildContext context,
   required String nameCountry,
   required String nameCity,
