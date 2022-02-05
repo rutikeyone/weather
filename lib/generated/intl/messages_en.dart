@@ -23,6 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "date_example": MessageLookupByLibrary.simpleMessage("Sunday, 02 Oct"),
+        "details_weather_data_text":
+            MessageLookupByLibrary.simpleMessage("Details weather data text"),
         "example_name_city": MessageLookupByLibrary.simpleMessage("Bundung"),
         "example_name_country":
             MessageLookupByLibrary.simpleMessage("Indonesia"),
@@ -31,9 +33,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "heavy_rain_text": MessageLookupByLibrary.simpleMessage("Heavy Rain"),
         "index_uv": MessageLookupByLibrary.simpleMessage("Index UV"),
         "index_uv_example": MessageLookupByLibrary.simpleMessage("2"),
+        "next_sixteen_text":
+            MessageLookupByLibrary.simpleMessage("Next 16 days"),
         "pressure": MessageLookupByLibrary.simpleMessage("pressure"),
         "pressure_example": MessageLookupByLibrary.simpleMessage("1014 mbar"),
         "temperature_example": MessageLookupByLibrary.simpleMessage("24°"),
+        "today_text": MessageLookupByLibrary.simpleMessage("Today"),
         "wind": MessageLookupByLibrary.simpleMessage("wind"),
         "wind_example": MessageLookupByLibrary.simpleMessage("19 km/h")
       };

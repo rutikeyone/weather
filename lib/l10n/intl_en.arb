@@ -11,6 +11,8 @@
     "index_uv" : "Index UV",
     "index_uv_example" : "2",
     "pressure" : "pressure",
-    "pressure_example" : "1014 mbar" 
-
+    "pressure_example" : "1014 mbar",
+    "today_text" : "Today",
+    "next_sixteen_text" : "Next 16 days",
+    "details_weather_data_text": "Details weather data text"
 }

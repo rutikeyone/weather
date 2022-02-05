@@ -179,6 +179,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Today`
+  String get today_text {
+    return Intl.message(
+      'Today',
+      name: 'today_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next 16 days`
+  String get next_sixteen_text {
+    return Intl.message(
+      'Next 16 days',
+      name: 'next_sixteen_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Details weather data text`
+  String get details_weather_data_text {
+    return Intl.message(
+      'Details weather data text',
+      name: 'details_weather_data_text',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
