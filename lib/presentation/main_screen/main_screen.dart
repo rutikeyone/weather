@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/data/api/api_util.dart';
+import 'package:weather_app/data/api/servise/current_weather_service.dart';
+import 'package:weather_app/data/repository/current_weather_data_repository.dart';
+import 'package:weather_app/domain/model/current_weather/current_weather_data.dart';
 import 'package:weather_app/generated/l10n.dart';
 import 'package:weather_app/presentation/next_screen/details_weather_data_screen.dart';
 import 'components/days_weather_data_item.dart';
@@ -17,8 +21,17 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    //Temperary data
+    // CurrentWeatherDataRepository repository = CurrentWeatherDataRepository(
+    //   ApiUtil(
+    //     CurrentWeatherService(),
+    //   ),
+    // );
 
+    // repository
+    //     .getCurrentWeatherData(latitude: 35, longitude: 35, units: "metric")
+    //     .then((value) => print(value.weather.main));
+
+    //Temperary data
     List<AdditionalData> additionalData = [
       AdditionalData(
           url: "assets/icons/wind.png",
