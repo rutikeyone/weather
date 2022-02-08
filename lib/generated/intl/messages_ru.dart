@@ -21,5 +21,25 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ru';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "date_example":
+            MessageLookupByLibrary.simpleMessage("Воскресенье, 02 Окт"),
+        "details_weather_data_text":
+            MessageLookupByLibrary.simpleMessage("Details weather data text"),
+        "example_name_city": MessageLookupByLibrary.simpleMessage("Бандунг"),
+        "example_name_country":
+            MessageLookupByLibrary.simpleMessage("Индонезия"),
+        "feel_like": MessageLookupByLibrary.simpleMessage("Чувствуется как"),
+        "feel_like_example": MessageLookupByLibrary.simpleMessage("25°"),
+        "heavy_rain_text": MessageLookupByLibrary.simpleMessage("Ливень"),
+        "index_uv": MessageLookupByLibrary.simpleMessage("Индекс UV"),
+        "index_uv_example": MessageLookupByLibrary.simpleMessage("2"),
+        "next_sixteen_text": MessageLookupByLibrary.simpleMessage("На 16 дней"),
+        "pressure": MessageLookupByLibrary.simpleMessage("Давление"),
+        "pressure_example": MessageLookupByLibrary.simpleMessage("1014 мбар"),
+        "temperature_example": MessageLookupByLibrary.simpleMessage("24°"),
+        "today_text": MessageLookupByLibrary.simpleMessage("Сегодня"),
+        "wind": MessageLookupByLibrary.simpleMessage("Ветер"),
+        "wind_example": MessageLookupByLibrary.simpleMessage("19 km/h")
+      };
 }

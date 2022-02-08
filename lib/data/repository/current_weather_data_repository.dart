@@ -13,7 +13,7 @@ class CurrentWeatherDataRepository extends CurrentWeatherRepository {
     required double longitude,
     required String units,
   }) {
-    return _apiUtil.getCurrentWeatherDara(
+    return _apiUtil.getCurrentWeatherData(
         latitude: latitude, longitude: longitude, units: units);
   }
 }

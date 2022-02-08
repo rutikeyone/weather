@@ -1,3 +1,18 @@
 {
-    
+    "example_name_city" : "Бандунг",
+    "example_name_country" : "Индонезия",
+    "heavy_rain_text" : "Ливень",
+    "date_example" : "Воскресенье, 02 Окт",
+    "temperature_example" : "24°",
+    "wind":"Ветер",
+    "wind_example" : "19 km/h",
+    "feel_like" : "Чувствуется как",
+    "feel_like_example" : "25°",
+    "index_uv" : "Индекс UV",
+    "index_uv_example" : "2",
+    "pressure" : "Давление",
+    "pressure_example" : "1014 мбар",
+    "today_text" : "Сегодня",
+    "next_sixteen_text" : "На 16 дней",
+    "details_weather_data_text": "Details weather data text"
 }

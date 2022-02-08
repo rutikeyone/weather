@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Expanded createMainCardDataItem({
+Widget createMainCardDataItem({
   required BuildContext context,
   required String url,
   required String title,
@@ -22,42 +22,44 @@ Expanded createMainCardDataItem({
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: Image.asset(
-                url,
-                color: Theme.of(context).canvasColor,
-                width: 28,
-                height: 28,
+        child: Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: Image.asset(
+                  url,
+                  color: Theme.of(context).canvasColor,
+                  width: 28,
+                  height: 28,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 2.5),
-                    child: Text(
-                      title.toUpperCase(),
-                      style: Theme.of(context).textTheme.bodyText2,
+              Padding(
+                padding: const EdgeInsets.only(right: 10.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 2.5),
+                      child: Text(
+                        title.toUpperCase(),
+                        style: Theme.of(context).textTheme.bodyText2,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 2.5),
-                    child: Text(
-                      data,
-                      style: Theme.of(context).textTheme.bodyText2,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 2.5),
+                      child: Text(
+                        data,
+                        style: Theme.of(context).textTheme.bodyText2,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     ),

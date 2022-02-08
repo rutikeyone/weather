@@ -8,7 +8,7 @@ class ApiUtil {
 
   ApiUtil(this._currentWeatherService);
 
-  Future<CurrentWeatherData> getCurrentWeatherDara({
+  Future<CurrentWeatherData> getCurrentWeatherData({
     required double latitude,
     required double longitude,
     required String units,
