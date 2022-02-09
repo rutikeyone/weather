@@ -14,5 +14,6 @@
     "pressure_example" : "1014 mbar",
     "today_text" : "Today",
     "next_sixteen_text" : "Next 16 days",
-    "details_weather_data_text": "Details weather data text"
+    "details_weather_data_text": "Details weather data text",
+    "error_message": "Oops! Something went wrong"
 }

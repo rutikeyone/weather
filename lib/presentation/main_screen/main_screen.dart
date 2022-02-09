@@ -23,7 +23,7 @@ class _MainScreenState extends State<MainScreen> {
           return createMainLoadingView(context: context);
         }
         if (state is MainLoadedState) {
-          return createMainLoadedView(context: context);
+          return createMainLoadedView(context: context, data: state.data);
         }
         if (state is MainErrorState) {
           return createMainErrorView(

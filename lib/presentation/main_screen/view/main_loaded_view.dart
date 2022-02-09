@@ -1,4 +1,7 @@
+import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_app/data/api/model/current_weather/api_current_weather_data.dart';
+import 'package:weather_app/domain/model/current_weather/current_weather_data.dart';
 import 'package:weather_app/generated/l10n.dart';
 import 'package:weather_app/internal/current_weather_di/current_weather_controller.dart';
 import 'package:weather_app/internal/locator.dart';
@@ -9,7 +12,10 @@ import 'package:weather_app/presentation/main_screen/components/main_app_bar.dar
 import 'package:weather_app/presentation/main_screen/components/main_data_card.dart';
 import 'package:weather_app/presentation/next_screen/details_weather_data_screen.dart';
 
-Scaffold createMainLoadedView({required BuildContext context}) {
+Scaffold createMainLoadedView({
+  required BuildContext context,
+  required CurrentWeatherData data,
+}) {
   //Temperary data
   List<AdditionalData> additionalData = [
     AdditionalData(
@@ -120,13 +126,13 @@ Scaffold createMainLoadedView({required BuildContext context}) {
             createMainDataCard(
               context: context,
               url: "assets/icons/white/cloudy_white.png",
-              typeWeather: S.of(context).heavy_rain_text,
+              typeWeather: StringUtils.capitalize(data.weather.description!),
               date: S.of(context).date_example,
-              temperature: S.of(context).temperature_example,
-              windData: S.of(context).wind_example,
-              feelLikeData: S.of(context).feel_like_example,
+              temperature: data.main.temp!.toInt().round().toString(),
+              windData: data.wind.speed!.round().toString(),
+              feelLikeData: data.main.feelsLike!.round().toString(),
               indexUvData: S.of(context).index_uv_example,
-              pressureData: S.of(context).pressure_example,
+              pressureData: data.main.pressure.toString(),
             ),
             const SizedBox(
               height: 30,

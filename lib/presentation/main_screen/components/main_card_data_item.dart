@@ -67,36 +67,3 @@ Widget createMainCardDataItem({
     ),
   );
 }
-
-// Flexible(
-//             child: Text(
-//               "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-//               style: Theme.of(context).textTheme.bodyText2,
-//               overflow: TextOverflow.ellipsis,
-//             ),
-//           ),
-
-
-// Padding(
-//             padding: const EdgeInsets.only(right: 10.0),
-//             child: Column(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Padding(
-//                   padding: const EdgeInsets.symmetric(vertical: 2.5),
-//                   child: Text(
-//                     title.toUpperCase(),
-//                     style: Theme.of(context).textTheme.bodyText2,
-//                   ),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.symmetric(vertical: 2.5),
-//                   child: Text(
-//                     data,
-//                     style: Theme.of(context).textTheme.bodyText2,
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),

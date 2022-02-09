@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "date_example": MessageLookupByLibrary.simpleMessage("Sunday, 02 Oct"),
         "details_weather_data_text":
             MessageLookupByLibrary.simpleMessage("Details weather data text"),
+        "error_message":
+            MessageLookupByLibrary.simpleMessage("Oops! Something went wrong"),
         "example_name_city": MessageLookupByLibrary.simpleMessage("Bundung"),
         "example_name_country":
             MessageLookupByLibrary.simpleMessage("Indonesia"),

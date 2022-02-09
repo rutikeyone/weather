@@ -19,6 +19,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
         emit(MainLoadingState());
       }
 
+      if (event is MainReloadEvent) {
+        emit(MainLoadingState());
+      }
+
       if (event is MainLoadedEvent) {
         try {
           CurrentWeatherData data = await getIt

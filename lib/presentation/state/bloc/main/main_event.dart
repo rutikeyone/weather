@@ -12,6 +12,8 @@ class MainStartEvent extends MainEvent {}
 
 class MainLoadingEvent extends MainEvent {}
 
+class MainReloadEvent extends MainEvent {}
+
 class MainLoadedEvent extends MainEvent {}
 
 class MainErrorEvent extends MainEvent {}
