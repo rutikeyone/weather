@@ -22,20 +22,20 @@ Widget createMainCardDataItem({
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
-        child: Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: Image.asset(
-                  url,
-                  color: Theme.of(context).canvasColor,
-                  width: 28,
-                  height: 28,
-                ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: Image.asset(
+                url,
+                color: Theme.of(context).canvasColor,
+                width: 28,
+                height: 28,
               ),
-              Padding(
+            ),
+            Flexible(
+              child: Padding(
                 padding: const EdgeInsets.only(right: 10.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -45,6 +45,7 @@ Widget createMainCardDataItem({
                       padding: const EdgeInsets.symmetric(vertical: 2.5),
                       child: Text(
                         title.toUpperCase(),
+                        overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.bodyText2,
                       ),
                     ),
@@ -52,16 +53,50 @@ Widget createMainCardDataItem({
                       padding: const EdgeInsets.symmetric(vertical: 2.5),
                       child: Text(
                         data,
+                        overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.bodyText2,
                       ),
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     ),
   );
 }
+
+// Flexible(
+//             child: Text(
+//               "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+//               style: Theme.of(context).textTheme.bodyText2,
+//               overflow: TextOverflow.ellipsis,
+//             ),
+//           ),
+
+
+// Padding(
+//             padding: const EdgeInsets.only(right: 10.0),
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Padding(
+//                   padding: const EdgeInsets.symmetric(vertical: 2.5),
+//                   child: Text(
+//                     title.toUpperCase(),
+//                     style: Theme.of(context).textTheme.bodyText2,
+//                   ),
+//                 ),
+//                 Padding(
+//                   padding: const EdgeInsets.symmetric(vertical: 2.5),
+//                   child: Text(
+//                     data,
+//                     style: Theme.of(context).textTheme.bodyText2,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
