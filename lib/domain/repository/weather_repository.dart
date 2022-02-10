@@ -1,9 +1,9 @@
 import 'package:weather_app/domain/model/current_weather/current_weather_data.dart';
 
-abstract class CurrentWeatherRepository {
+abstract class WeatherRepository {
   Future<CurrentWeatherData> getCurrentWeatherData({
-    required double latitude,
-    required double longitude,
+    required String city,
+    required String country,
     required String units,
   });
 }

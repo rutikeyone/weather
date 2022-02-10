@@ -1,10 +1,8 @@
 import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_app/data/api/model/current_weather/api_current_weather_data.dart';
+import 'package:weather_app/domain/model/Location.dart';
 import 'package:weather_app/domain/model/current_weather/current_weather_data.dart';
 import 'package:weather_app/generated/l10n.dart';
-import 'package:weather_app/internal/current_weather_di/current_weather_controller.dart';
-import 'package:weather_app/internal/locator.dart';
 import 'package:weather_app/presentation/main_screen/components/days_weather_data_header.dart';
 import 'package:weather_app/presentation/main_screen/components/days_weather_data_item.dart';
 import 'package:weather_app/presentation/main_screen/components/location_app_header.dart';
@@ -14,6 +12,7 @@ import 'package:weather_app/presentation/next_screen/details_weather_data_screen
 
 Scaffold createMainLoadedView({
   required BuildContext context,
+  required Location location,
   required CurrentWeatherData data,
 }) {
   //Temperary data
@@ -118,8 +117,8 @@ Scaffold createMainLoadedView({
             ),
             createLocationAppHeader(
                 context: context,
-                nameCity: S.of(context).example_name_city,
-                nameCountry: S.of(context).example_name_country),
+                nameCity: location.city,
+                nameCountry: location.country),
             const SizedBox(
               height: 30,
             ),

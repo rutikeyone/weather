@@ -3,14 +3,13 @@ import 'package:weather_app/domain/model/current_weather/current_weather_data.da
 
 import '../locator.dart';
 
-class CurrentWeatherConstroller {
+class CurrentWeatherController {
   Future<CurrentWeatherData> getCurrentWeatherData(
-      {required double latitude,
-      required double longitude,
+      {required String city,
+      required String country,
       required String units}) async {
     return await getIt
         .get<CurrentWeatherDataRepository>()
-        .getCurrentWeatherData(
-            latitude: latitude, longitude: longitude, units: units);
+        .getCurrentWeatherData(city: city, country: country, units: units);
   }
 }

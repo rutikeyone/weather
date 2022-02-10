@@ -8,7 +8,7 @@ class CurrentWeatherService {
   Future<ApiCurrentWeatherData> getCurrentWeatherData(
       GetCurrentWeatherBody body) async {
     final String _BASE_URL =
-        "https://api.openweathermap.org/data/2.5/weather?lat=${body.latitude}&lon=${body.longitude}&appid=${body.apiKey}&units=${body.units}";
+        "https://api.openweathermap.org/data/2.5/weather?q=${body.city}&appid=${body.apiKey}&units=${body.units}";
     final responce = await http.get(Uri.parse(_BASE_URL));
     final data = jsonDecode(responce.body);
     ApiCurrentWeatherData currentWeatherData = ApiCurrentWeatherData();
