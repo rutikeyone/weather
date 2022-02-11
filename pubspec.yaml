@@ -33,9 +33,12 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/icons/white/
-    - assets/icons/blue/
     - assets/icons/
+    - assets/icons/error_icons/
+    - assets/icons/weather_icons/
+    - assets/icons/main_card_icons/
+    - assets/icons/header_icons/
+    
   #   - images/a_dot_ham.jpeg
   fonts:
     - family: RobotoSlab

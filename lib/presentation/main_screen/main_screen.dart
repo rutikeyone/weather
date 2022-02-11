@@ -27,8 +27,8 @@ class _MainScreenState extends State<MainScreen> {
           return createMainLoadedView(
               context: context,
               location: Location(
-                city: state.city,
-                country: state.country,
+                city: state.location.city,
+                country: state.location.country,
               ),
               data: state.data);
         }

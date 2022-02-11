@@ -1,18 +1,20 @@
+import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/generated/l10n.dart';
 
 import 'main_card_data_item.dart';
 
 Container createMainDataCard({
   required BuildContext context,
+  required DateTime date,
   required String url,
   required String typeWeather,
-  required String date,
-  required String temperature,
-  required String windData,
-  required String feelLikeData,
-  required String indexUvData,
-  required String pressureData,
+  required double temperature,
+  required num windData,
+  required double feelLikeData,
+  required double minTemperature,
+  required double maxTemperature,
 }) {
   return Container(
     decoration: BoxDecoration(
@@ -26,29 +28,29 @@ Container createMainDataCard({
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              url,
-              width: 96,
-              height: 96,
+              "assets/icons/weather_icons/10n.png",
+              width: 115,
+              height: 115,
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
-              typeWeather,
+              StringUtils.capitalize(typeWeather),
               style: Theme.of(context).textTheme.bodyText1,
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
-              date,
+              "${DateFormat('EEEE').format(date)}, ${date.day} ${DateFormat('MMMM').format(date)}",
               style: Theme.of(context).textTheme.bodyText2,
             ),
             const SizedBox(
               height: 20,
             ),
             Text(
-              temperature,
+              temperature.round().toString(),
               maxLines: 1,
               style: Theme.of(context).textTheme.headline1,
             ),
@@ -60,14 +62,14 @@ Container createMainDataCard({
                 createMainCardDataItem(
                   context: context,
                   title: S.of(context).wind,
-                  url: "assets/icons/wind.png",
-                  data: windData,
+                  url: "assets/icons/main_card_icons/wind.png",
+                  data: windData.round().toString(),
                 ),
                 createMainCardDataItem(
                   context: context,
                   title: S.of(context).feel_like,
-                  url: "assets/icons/thermometer.png",
-                  data: feelLikeData,
+                  url: "assets/icons/main_card_icons/thermometer.png",
+                  data: feelLikeData.round().toString(),
                 ),
               ],
             ),
@@ -75,15 +77,15 @@ Container createMainDataCard({
               children: [
                 createMainCardDataItem(
                   context: context,
-                  title: S.of(context).index_uv,
-                  url: "assets/icons/sun.png",
-                  data: indexUvData,
+                  title: S.of(context).min,
+                  url: "assets/icons/main_card_icons/thermometer_min.png",
+                  data: minTemperature.round().toString(),
                 ),
                 createMainCardDataItem(
                   context: context,
-                  title: S.of(context).pressure,
-                  url: "assets/icons/pulse.png",
-                  data: pressureData,
+                  title: S.of(context).max,
+                  url: "assets/icons/main_card_icons/thermometer_max.png",
+                  data: maxTemperature.round().toString(),
                 ),
               ],
             ),

@@ -10,8 +10,10 @@ class CurrentWeatherData {
   Main main;
   int visibility;
   Wind wind;
+  DateTime date;
 
   CurrentWeatherData({
+    required this.date,
     required this.name,
     required this.coord,
     required this.weather,

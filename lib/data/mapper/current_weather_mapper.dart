@@ -9,10 +9,13 @@ class CurrentWeatherMapper {
   static CurrentWeatherData fromApi(ApiCurrentWeatherData data) {
     return CurrentWeatherData(
       name: data.name!,
+      date: DateTime(data.dt! * 1000),
       coord: Coord(lat: data.coord!.lat, lon: data.coord!.lon),
       weather: Weather(
-          main: data.weather![0].main,
-          description: data.weather![0].description),
+        main: data.weather![0].main,
+        description: data.weather![0].description,
+        icon: data.weather![0].icon,
+      ),
       main: Main(
         temp: data.main!.temp,
         feelsLike: data.main!.feelsLike,

@@ -30,8 +30,8 @@ Widget createMainCardDataItem({
               child: Image.asset(
                 url,
                 color: Theme.of(context).canvasColor,
-                width: 28,
-                height: 28,
+                width: 32,
+                height: 32,
               ),
             ),
             Flexible(

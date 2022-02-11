@@ -13,7 +13,7 @@ Scaffold createMainErrorView(
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Image.asset(
-              "assets/icons/error_man.png",
+              "assets/icons/error_icons/error_man.png",
               width: 512,
             ),
           ),

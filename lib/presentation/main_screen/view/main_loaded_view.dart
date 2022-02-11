@@ -37,63 +37,51 @@ Scaffold createMainLoadedView({
 
   List<DayData> dayTempuratureData = [
     DayData(
-        unselectedUrl: "assets/icons/blue/cloudy_blue.png",
-        selectedUrl: "assets/icons/white/cloudy_white.png",
+        url: "assets/icons/weather_icons/01d.png",
         temperature: "21",
         time: "2:00"),
     DayData(
-        unselectedUrl: "assets/icons/blue/cloudy_sun_blue.png",
-        selectedUrl: "assets/icons/white/cloudy_sun_white.png",
+        url: "assets/icons/weather_icons/02d.png",
         temperature: "20",
         time: "4:00"),
     DayData(
-        unselectedUrl: "assets/icons/blue/rain_cloudy_blue.png",
-        selectedUrl: "assets/icons/white/rain_cloudy_white.png",
+        url: "assets/icons/weather_icons/03d.png",
         temperature: "22",
         time: "6:00"),
     DayData(
-        unselectedUrl: "assets/icons/sun_card_icon.png",
-        selectedUrl: "assets/icons/sun_card_icon.png",
+        url: "assets/icons/weather_icons/04d.png",
         temperature: "23",
         time: "8:00"),
     DayData(
-        unselectedUrl: "assets/icons/blue/cloudy_blue.png",
-        selectedUrl: "assets/icons/white/cloudy_white.png",
+        url: "assets/icons/weather_icons/09d.png",
         temperature: "22",
         time: "10:00"),
     DayData(
-        unselectedUrl: "assets/icons/blue/cloudy_sun_blue.png",
-        selectedUrl: "assets/icons/white/cloudy_sun_white.png",
+        url: "assets/icons/weather_icons/10d.png",
         temperature: "24",
         time: "12:00"),
     DayData(
-        unselectedUrl: "assets/icons/blue/rain_cloudy_blue.png",
-        selectedUrl: "assets/icons/white/rain_cloudy_white.png",
+        url: "assets/icons/weather_icons/11d.png",
         temperature: "25",
         time: "14:00"),
     DayData(
-        unselectedUrl: "assets/icons/sun_card_icon.png",
-        selectedUrl: "assets/icons/sun_card_icon.png",
+        url: "assets/icons/weather_icons/13d.png",
         temperature: "22",
         time: "16:00"),
     DayData(
-        unselectedUrl: "assets/icons/blue/cloudy_blue.png",
-        selectedUrl: "assets/icons/white/cloudy_white.png",
+        url: "assets/icons/weather_icons/09d.png",
         temperature: "22",
         time: "18:00"),
     DayData(
-        unselectedUrl: "assets/icons/blue/cloudy_sun_blue.png",
-        selectedUrl: "assets/icons/white/cloudy_sun_white.png",
+        url: "assets/icons/weather_icons/02d.png",
         temperature: "21",
         time: "20:00"),
     DayData(
-        unselectedUrl: "assets/icons/blue/rain_cloudy_blue.png",
-        selectedUrl: "assets/icons/white/rain_cloudy_white.png",
+        url: "assets/icons/weather_icons/04d.png",
         temperature: "20",
         time: "22:00"),
     DayData(
-        unselectedUrl: "assets/icons/sun_card_icon.png",
-        selectedUrl: "assets/icons/sun_card_icon.png",
+        url: "assets/icons/weather_icons/09d.png",
         temperature: "18",
         time: "24:00"),
   ];
@@ -102,6 +90,7 @@ Scaffold createMainLoadedView({
     backgroundColor: Theme.of(context).backgroundColor,
     appBar: createMainAppBar(
       context: context,
+      onChangeUnits: () {},
       onThemeModeClick: () {},
       onFavouriteClick: () {},
       onSearchClick: () {},
@@ -124,14 +113,15 @@ Scaffold createMainLoadedView({
             ),
             createMainDataCard(
               context: context,
-              url: "assets/icons/white/cloudy_white.png",
-              typeWeather: StringUtils.capitalize(data.weather.description!),
-              date: S.of(context).date_example,
-              temperature: data.main.temp!.toInt().round().toString(),
-              windData: data.wind.speed!.round().toString(),
-              feelLikeData: data.main.feelsLike!.round().toString(),
-              indexUvData: S.of(context).index_uv_example,
-              pressureData: data.main.pressure.toString(),
+              url:
+                  "http://openweathermap.org/img/wn/${data.weather.icon!}@4x.png",
+              typeWeather: data.weather.description!,
+              date: data.date,
+              temperature: data.main.temp!,
+              windData: data.wind.speed!,
+              feelLikeData: data.main.feelsLike!,
+              minTemperature: data.main.tempMin!,
+              maxTemperature: data.main.tempMax!,
             ),
             const SizedBox(
               height: 30,
@@ -159,7 +149,7 @@ Scaffold createMainLoadedView({
                     context: context,
                     time: dayTempuratureData[index].time,
                     temperature: dayTempuratureData[index].temperature,
-                    url: dayTempuratureData[index].unselectedUrl,
+                    url: dayTempuratureData[index].url,
                   ),
                 ),
               ),
@@ -185,14 +175,12 @@ class AdditionalData {
 }
 
 class DayData {
-  final String selectedUrl;
-  final String unselectedUrl;
+  final String url;
   final String temperature;
   final String time;
 
   DayData({
-    required this.selectedUrl,
-    required this.unselectedUrl,
+    required this.url,
     required this.temperature,
     required this.time,
   });

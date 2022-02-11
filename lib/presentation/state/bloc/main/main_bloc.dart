@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 import 'package:weather_app/data/repository/current_weather_data_repository.dart';
+import 'package:weather_app/domain/model/Location.dart';
 import 'package:weather_app/domain/model/current_location/current_location_data.dart';
 import 'package:weather_app/domain/model/current_weather/current_weather_data.dart';
 import 'package:weather_app/internal/current_location_di/current_location_controller.dart';
@@ -37,12 +38,21 @@ class MainBloc extends Bloc<MainEvent, MainState> {
                   city: _currentLocation.city,
                   country: _currentLocation.country,
                   units: "metric");
-          emit(MainLoadedState(
-              city: _currentLocation.city,
-              country: _currentLocation.country,
-              data: data));
+
+          emit(
+            MainLoadedState(
+                location: Location(
+                  city: _currentLocation.city,
+                  country: _currentLocation.country,
+                ),
+                data: data),
+          );
         } catch (e) {
-          emit(MainErrorState(errorMessage: e.toString()));
+          emit(
+            MainErrorState(
+              errorMessage: e.toString(),
+            ),
+          );
         }
       }
     });

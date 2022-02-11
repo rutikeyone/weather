@@ -36,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "heavy_rain_text": MessageLookupByLibrary.simpleMessage("Ливень"),
         "index_uv": MessageLookupByLibrary.simpleMessage("Индекс UV"),
         "index_uv_example": MessageLookupByLibrary.simpleMessage("2"),
+        "max": MessageLookupByLibrary.simpleMessage("Макс"),
+        "min": MessageLookupByLibrary.simpleMessage("Мин"),
         "next_sixteen_text": MessageLookupByLibrary.simpleMessage("На 16 дней"),
         "pressure": MessageLookupByLibrary.simpleMessage("Давление"),
         "pressure_example": MessageLookupByLibrary.simpleMessage("1014 мбар"),

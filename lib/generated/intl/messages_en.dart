@@ -35,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "heavy_rain_text": MessageLookupByLibrary.simpleMessage("Heavy Rain"),
         "index_uv": MessageLookupByLibrary.simpleMessage("Index UV"),
         "index_uv_example": MessageLookupByLibrary.simpleMessage("2"),
+        "max": MessageLookupByLibrary.simpleMessage("Max"),
+        "min": MessageLookupByLibrary.simpleMessage("Min"),
         "next_sixteen_text":
             MessageLookupByLibrary.simpleMessage("Next 16 days"),
         "pressure": MessageLookupByLibrary.simpleMessage("pressure"),

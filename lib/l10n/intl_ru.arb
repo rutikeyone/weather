@@ -15,5 +15,7 @@
     "today_text" : "Сегодня",
     "next_sixteen_text" : "На 16 дней",
     "details_weather_data_text": "Details weather data text",
-    "error_message": "Уупс! Что-то пошло не так"
+    "error_message": "Уупс! Что-то пошло не так",
+    "min" : "Мин",
+    "max" : "Макс"
 }

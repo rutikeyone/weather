@@ -1,7 +1,7 @@
 class Wind {
-  double? speed;
-  int? deg;
-  double? gust;
+  num? speed;
+  num? deg;
+  num? gust;
 
   Wind({this.speed, this.deg, this.gust});
 }

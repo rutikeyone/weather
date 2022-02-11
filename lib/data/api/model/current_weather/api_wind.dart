@@ -1,7 +1,7 @@
 class ApiWind {
-  double? speed;
-  int? deg;
-  double? gust;
+  num? speed;
+  num? deg;
+  num? gust;
 
   ApiWind({this.speed, this.deg, this.gust});
 

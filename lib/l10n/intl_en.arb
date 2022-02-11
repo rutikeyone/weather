@@ -15,5 +15,7 @@
     "today_text" : "Today",
     "next_sixteen_text" : "Next 16 days",
     "details_weather_data_text": "Details weather data text",
-    "error_message": "Oops! Something went wrong"
+    "error_message": "Oops! Something went wrong",
+    "min" : "Min",
+    "max" : "Max"
 }
