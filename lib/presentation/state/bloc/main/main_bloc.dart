@@ -41,8 +41,8 @@ class MainBloc extends Bloc<MainEvent, MainState> {
             CurrentWeatherData data = await getIt
                 .get<CurrentWeatherController>()
                 .getCurrentWeatherData(
-                    city: _currentLocation.city,
-                    country: _currentLocation.country,
+                    latitude: _currentLocation.latitude,
+                    longitude: _currentLocation.longitude,
                     units: settings.units);
 
             emit(

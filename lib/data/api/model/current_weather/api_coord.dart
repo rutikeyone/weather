@@ -1,6 +1,6 @@
 class ApiCoord {
-  double? lon;
-  double? lat;
+  num? lon;
+  num? lat;
 
   ApiCoord({this.lon, this.lat});
 

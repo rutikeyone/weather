@@ -25,7 +25,6 @@ class CurrentLocationService {
     List<Placemark> placemarks = await placemarkFromCoordinates(
         _currentPosition.latitude, _currentPosition.longitude,
         localeIdentifier: "usa");
-
     return ApiCurrentLocationData(
         latitude: _currentPosition.latitude,
         longitude: _currentPosition.longitude,

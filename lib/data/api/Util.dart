@@ -13,12 +13,12 @@ class Util {
   Util(this._currentWeatherService, this._currentLocationService);
 
   Future<CurrentWeatherData> getCurrentWeatherData({
-    required String city,
-    required String country,
+    required double latitude,
+    required double longitude,
     required String units,
   }) async {
     final body =
-        GetCurrentWeatherBody(city: city, country: country, units: units);
+        GetWeatherBody(latitude: latitude, longitude: longitude, units: units);
     final result = await _currentWeatherService.getCurrentWeatherData(body);
     return CurrentWeatherMapper.fromApi(result);
   }

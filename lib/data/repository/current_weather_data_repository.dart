@@ -9,11 +9,11 @@ class CurrentWeatherDataRepository extends WeatherRepository {
 
   @override
   Future<CurrentWeatherData> getCurrentWeatherData({
-    required String city,
-    required String country,
     required String units,
+    required double longitude,
+    required double latitude,
   }) {
     return _util.getCurrentWeatherData(
-        city: city, country: country, units: units);
+        latitude: latitude, longitude: longitude, units: units);
   }
 }

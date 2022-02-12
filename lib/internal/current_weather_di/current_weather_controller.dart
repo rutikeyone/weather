@@ -5,11 +5,12 @@ import '../locator.dart';
 
 class CurrentWeatherController {
   Future<CurrentWeatherData> getCurrentWeatherData(
-      {required String city,
-      required String country,
+      {required double latitude,
+      required double longitude,
       required String units}) async {
     return await getIt
         .get<CurrentWeatherDataRepository>()
-        .getCurrentWeatherData(city: city, country: country, units: units);
+        .getCurrentWeatherData(
+            latitude: latitude, longitude: longitude, units: units);
   }
 }
