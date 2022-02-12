@@ -17,5 +17,9 @@
     "details_weather_data_text": "Details weather data text",
     "error_message": "Oops! Something went wrong",
     "min" : "Min",
-    "max" : "Max"
+    "max" : "Max",
+    "metricTemperature" : "°C",
+    "metricWindSpeed"  : "m/sec",
+    "imperialTemperature" :"°F",
+    "imperialWindSpeed": "m/hour"
 }

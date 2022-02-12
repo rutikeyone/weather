@@ -7,14 +7,15 @@ import 'main_card_data_item.dart';
 
 Container createMainDataCard({
   required BuildContext context,
+  required bool isImperialUnits,
   required DateTime date,
   required String url,
   required String typeWeather,
-  required double temperature,
+  required num temperature,
   required num windData,
-  required double feelLikeData,
-  required double minTemperature,
-  required double maxTemperature,
+  required num feelLikeData,
+  required num minTemperature,
+  required num maxTemperature,
 }) {
   return Container(
     decoration: BoxDecoration(
@@ -28,7 +29,7 @@ Container createMainDataCard({
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/icons/weather_icons/10n.png",
+              url,
               width: 115,
               height: 115,
             ),
@@ -50,7 +51,10 @@ Container createMainDataCard({
               height: 20,
             ),
             Text(
-              temperature.round().toString(),
+              temperature.round().toString() +
+                  (isImperialUnits
+                      ? S.of(context).imperialTemperature
+                      : S.of(context).metricTemperature),
               maxLines: 1,
               style: Theme.of(context).textTheme.headline1,
             ),
@@ -63,13 +67,20 @@ Container createMainDataCard({
                   context: context,
                   title: S.of(context).wind,
                   url: "assets/icons/main_card_icons/wind.png",
-                  data: windData.round().toString(),
+                  data: windData.round().toString() +
+                      " " +
+                      (isImperialUnits
+                          ? S.of(context).imperialWindSpeed
+                          : S.of(context).metricWindSpeed),
                 ),
                 createMainCardDataItem(
                   context: context,
                   title: S.of(context).feel_like,
                   url: "assets/icons/main_card_icons/thermometer.png",
-                  data: feelLikeData.round().toString(),
+                  data: feelLikeData.round().toString() +
+                      (isImperialUnits
+                          ? S.of(context).imperialTemperature
+                          : S.of(context).metricTemperature),
                 ),
               ],
             ),
@@ -79,13 +90,19 @@ Container createMainDataCard({
                   context: context,
                   title: S.of(context).min,
                   url: "assets/icons/main_card_icons/thermometer_min.png",
-                  data: minTemperature.round().toString(),
+                  data: minTemperature.round().toString() +
+                      (isImperialUnits
+                          ? S.of(context).imperialTemperature
+                          : S.of(context).metricTemperature),
                 ),
                 createMainCardDataItem(
                   context: context,
                   title: S.of(context).max,
                   url: "assets/icons/main_card_icons/thermometer_max.png",
-                  data: maxTemperature.round().toString(),
+                  data: maxTemperature.round().toString() +
+                      (isImperialUnits
+                          ? S.of(context).imperialTemperature
+                          : S.of(context).metricTemperature),
                 ),
               ],
             ),

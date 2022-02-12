@@ -239,6 +239,46 @@ class S {
       args: [],
     );
   }
+
+  /// `°C`
+  String get metricTemperature {
+    return Intl.message(
+      '°C',
+      name: 'metricTemperature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `m/sec`
+  String get metricWindSpeed {
+    return Intl.message(
+      'm/sec',
+      name: 'metricWindSpeed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `°F`
+  String get imperialTemperature {
+    return Intl.message(
+      '°F',
+      name: 'imperialTemperature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `m/hour`
+  String get imperialWindSpeed {
+    return Intl.message(
+      'm/hour',
+      name: 'imperialWindSpeed',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

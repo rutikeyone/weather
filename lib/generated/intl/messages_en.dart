@@ -33,9 +33,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "feel_like": MessageLookupByLibrary.simpleMessage("Feel like"),
         "feel_like_example": MessageLookupByLibrary.simpleMessage("25°"),
         "heavy_rain_text": MessageLookupByLibrary.simpleMessage("Heavy Rain"),
+        "imperialTemperature": MessageLookupByLibrary.simpleMessage("°F"),
+        "imperialWindSpeed": MessageLookupByLibrary.simpleMessage("m/hour"),
         "index_uv": MessageLookupByLibrary.simpleMessage("Index UV"),
         "index_uv_example": MessageLookupByLibrary.simpleMessage("2"),
         "max": MessageLookupByLibrary.simpleMessage("Max"),
+        "metricTemperature": MessageLookupByLibrary.simpleMessage("°C"),
+        "metricWindSpeed": MessageLookupByLibrary.simpleMessage("m/sec"),
         "min": MessageLookupByLibrary.simpleMessage("Min"),
         "next_sixteen_text":
             MessageLookupByLibrary.simpleMessage("Next 16 days"),

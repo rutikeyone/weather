@@ -9,7 +9,7 @@ class CurrentWeatherMapper {
   static CurrentWeatherData fromApi(ApiCurrentWeatherData data) {
     return CurrentWeatherData(
       name: data.name!,
-      date: DateTime(data.dt! * 1000),
+      date: DateTime.fromMillisecondsSinceEpoch(data.dt! * 1000),
       coord: Coord(lat: data.coord!.lat, lon: data.coord!.lon),
       weather: Weather(
         main: data.weather![0].main,

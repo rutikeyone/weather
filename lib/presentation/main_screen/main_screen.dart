@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/domain/model/Location.dart';
+import 'package:weather_app/domain/model/location.dart';
 import 'package:weather_app/presentation/main_screen/view/main_error_view.dart';
 import 'package:weather_app/presentation/main_screen/view/main_loaded_view.dart';
 import 'package:weather_app/presentation/main_screen/view/main_loading_view.dart';
@@ -25,12 +25,14 @@ class _MainScreenState extends State<MainScreen> {
         }
         if (state is MainLoadedState) {
           return createMainLoadedView(
-              context: context,
-              location: Location(
-                city: state.location.city,
-                country: state.location.country,
-              ),
-              data: state.data);
+            context: context,
+            location: Location(
+              city: state.location.city,
+              country: state.location.country,
+            ),
+            data: state.data,
+            settings: state.settings,
+          );
         }
         if (state is MainErrorState) {
           return createMainErrorView(

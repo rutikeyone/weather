@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 AppBar createMainAppBar({
   required BuildContext context,
+  required bool isImperialUnits,
   required VoidCallback onChangeUnits,
   required VoidCallback onSearchClick,
   required VoidCallback onFavouriteClick,
@@ -45,7 +46,9 @@ AppBar createMainAppBar({
               iconSize: 30,
               icon: Image.asset(
                 "assets/icons/header_icons/imperial_icon.png",
-                color: Theme.of(context).iconTheme.color,
+                color: isImperialUnits
+                    ? Theme.of(context).cardColor
+                    : Theme.of(context).iconTheme.color,
               ),
               onPressed: onChangeUnits,
             ),

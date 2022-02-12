@@ -17,5 +17,9 @@
     "details_weather_data_text": "Details weather data text",
     "error_message": "Уупс! Что-то пошло не так",
     "min" : "Мин",
-    "max" : "Макс"
+    "max" : "Макс",
+    "metricTemperature" : "°C",
+    "metricWindSpeed"  : "м/сек",
+    "imperialTemperature" :"°F",
+    "imperialWindSpeed": "м/час"
 }
