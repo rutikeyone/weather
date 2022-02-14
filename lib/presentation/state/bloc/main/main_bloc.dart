@@ -1,16 +1,16 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:http/http.dart';
 import 'package:meta/meta.dart';
 import 'package:weather_app/data/repository/current_weather_data_repository.dart';
 import 'package:weather_app/domain/model/location.dart';
-import 'package:weather_app/domain/model/current_location/current_location_data.dart';
 import 'package:weather_app/domain/model/current_weather/current_weather_data.dart';
 import 'package:weather_app/domain/model/settings.dart';
+import 'package:weather_app/domain/model/week_weather/hourly.dart';
 import 'package:weather_app/internal/current_location_di/current_location_controller.dart';
 import 'package:weather_app/internal/current_weather_di/current_weather_controller.dart';
 import 'package:weather_app/internal/locator.dart';
 import 'package:weather_app/internal/settings_di/settings_controller.dart';
+import 'package:weather_app/internal/week_weather_di/week_weather_controller.dart';
 
 part 'main_event.dart';
 part 'main_state.dart';
@@ -36,14 +36,25 @@ class MainBloc extends Bloc<MainEvent, MainState> {
                 .get<CurrentLocationColntroller>()
                 .getCurrentLocation();
 
-            final settings = getIt.get<SettingsController>().getSettings();
+            final _settings = getIt.get<SettingsController>().getSettings();
 
-            CurrentWeatherData data = await getIt
+            final _currentWeatherData = await getIt
                 .get<CurrentWeatherController>()
                 .getCurrentWeatherData(
                     latitude: _currentLocation.latitude,
                     longitude: _currentLocation.longitude,
-                    units: settings.units);
+                    units: _settings.units);
+
+            final _weekWeatherData =
+                await getIt.get<WeekWeatherController>().getWeekWeatherData(
+                      latitude: _currentLocation.latitude,
+                      longitude: _currentLocation.longitude,
+                      units: _settings.units,
+                    );
+
+            for (var item in _weekWeatherData.hourlies) {
+              print(item.hour);
+            }
 
             emit(
               MainLoadedState(
@@ -51,8 +62,9 @@ class MainBloc extends Bloc<MainEvent, MainState> {
                   city: _currentLocation.city,
                   country: _currentLocation.country,
                 ),
-                data: data,
-                settings: settings,
+                hourlies: _weekWeatherData.hourlies,
+                data: _currentWeatherData,
+                settings: _settings,
               ),
             );
           } catch (e) {

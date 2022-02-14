@@ -1,8 +1,8 @@
 class ApiCurrentLocationData {
-  double latitude;
-  double longitude;
-  String country;
-  String city;
+  double? latitude;
+  double? longitude;
+  String? country;
+  String? city;
 
   ApiCurrentLocationData(
       {required this.latitude,

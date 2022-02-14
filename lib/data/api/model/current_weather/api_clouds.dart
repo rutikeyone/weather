@@ -1,5 +1,5 @@
 class ApiClouds {
-  int? all;
+  num? all;
 
   ApiClouds({this.all});
 

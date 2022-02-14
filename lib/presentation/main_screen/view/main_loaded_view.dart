@@ -5,8 +5,8 @@ import 'package:weather_app/domain/model/location.dart';
 import 'package:weather_app/domain/model/current_weather/current_weather_data.dart';
 import 'package:weather_app/domain/model/settings.dart';
 import 'package:weather_app/generated/l10n.dart';
-import 'package:weather_app/presentation/main_screen/components/days_weather_data_header.dart';
-import 'package:weather_app/presentation/main_screen/components/days_weather_data_item.dart';
+import 'package:weather_app/presentation/main_screen/components/hourlies_weather_data_header.dart';
+import 'package:weather_app/presentation/main_screen/components/hourly_weather_data_item.dart';
 import 'package:weather_app/presentation/main_screen/components/location_app_header.dart';
 import 'package:weather_app/presentation/main_screen/components/main_app_bar.dart';
 import 'package:weather_app/presentation/main_screen/components/main_data_card.dart';
@@ -124,19 +124,19 @@ Scaffold createMainLoadedView({
             createMainDataCard(
               context: context,
               isImperialUnits: settings.isImperialUnits,
-              url: "assets/icons/weather_icons/${data.weather.icon!}.png",
-              typeWeather: data.weather.description!,
+              url: "assets/icons/weather_icons/${data.weather.icon}.png",
+              typeWeather: data.weather.description,
               date: data.date,
-              temperature: data.main.temp!,
-              windData: data.wind.speed!,
-              feelLikeData: data.main.feelsLike!,
-              minTemperature: data.main.tempMin!,
-              maxTemperature: data.main.tempMax!,
+              temperature: data.main.temp,
+              windData: data.wind.speed,
+              feelLikeData: data.main.feelsLike,
+              minTemperature: data.main.tempMin,
+              maxTemperature: data.main.tempMax,
             ),
             const SizedBox(
               height: 30,
             ),
-            createDaysWeatherDataHeader(
+            createHourliesWeatherDataHeader(
                 context: context,
                 onNextClick: () {
                   Navigator.of(context).push(
@@ -155,7 +155,7 @@ Scaffold createMainLoadedView({
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                   itemCount: dayTempuratureData.length,
-                  itemBuilder: (context, index) => createDaysWeatherDataItem(
+                  itemBuilder: (context, index) => createHourlyWeatherDataItem(
                     context: context,
                     time: dayTempuratureData[index].time,
                     temperature: dayTempuratureData[index].temperature,

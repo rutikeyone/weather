@@ -23,24 +23,24 @@ class ApiDaily {
     required this.pop,
     required this.uvi,
   });
-  late final int dt;
-  late final int sunrise;
-  late final int sunset;
-  late final int moonrise;
-  late final int moonset;
-  late final double moonPhase;
-  late final ApiTemp temp;
-  late final ApiFeelsLike feelsLike;
-  late final int pressure;
-  late final int humidity;
-  late final double dewPoint;
-  late final double windSpeed;
-  late final int windDeg;
-  late final double windGust;
-  late final List<ApiWeather> weather;
-  late final int clouds;
-  late final double? pop;
-  late final double uvi;
+  late final num? dt;
+  late final num? sunrise;
+  late final num? sunset;
+  late final num? moonrise;
+  late final num? moonset;
+  late final num? moonPhase;
+  late final ApiTemp? temp;
+  late final ApiFeelsLike? feelsLike;
+  late final num? pressure;
+  late final num? humidity;
+  late final num? dewPoint;
+  late final num? windSpeed;
+  late final num? windDeg;
+  late final num? windGust;
+  late final List<ApiWeather>? weather;
+  late final num? clouds;
+  late final num? pop;
+  late final num? uvi;
 
   ApiDaily.fromJson(Map<String, dynamic> json) {
     dt = json['dt'];
@@ -72,15 +72,15 @@ class ApiDaily {
     _data['moonrise'] = moonrise;
     _data['moonset'] = moonset;
     _data['moon_phase'] = moonPhase;
-    _data['temp'] = temp.toJson();
-    _data['feels_like'] = feelsLike.toJson();
+    _data['temp'] = temp!.toJson();
+    _data['feels_like'] = feelsLike!.toJson();
     _data['pressure'] = pressure;
     _data['humidity'] = humidity;
     _data['dew_point'] = dewPoint;
     _data['wind_speed'] = windSpeed;
     _data['wind_deg'] = windDeg;
     _data['wind_gust'] = windGust;
-    _data['weather'] = weather.map((e) => e.toJson()).toList();
+    _data['weather'] = weather!.map((e) => e.toJson()).toList();
     _data['clouds'] = clouds;
     _data['pop'] = pop;
     _data['uvi'] = uvi;

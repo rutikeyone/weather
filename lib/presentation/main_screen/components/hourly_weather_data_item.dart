@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Padding createDaysWeatherDataItem({
+Padding createHourlyWeatherDataItem({
   required BuildContext context,
   required String time,
   required String url,

@@ -13,13 +13,18 @@ class MainLoadingState extends MainState {}
 
 class MainLoadedState extends MainState {
   final CurrentWeatherData data;
+  final List<Hourly> hourlies;
   final Location location;
   final Settings settings;
   @override
   List<Object?> get props => [data, location, settings];
 
-  const MainLoadedState(
-      {required this.location, required this.data, required this.settings});
+  const MainLoadedState({
+    required this.location,
+    required this.data,
+    required this.settings,
+    required this.hourlies,
+  });
 }
 
 class MainErrorState extends MainState {

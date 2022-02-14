@@ -10,15 +10,15 @@ class ApiCurrentWeatherData {
   List<ApiWeather>? weather;
   String? base;
   ApiMain? main;
-  int? visibility;
+  num? visibility;
   ApiWind? wind;
   ApiClouds? clouds;
-  int? dt;
+  num? dt;
   ApiSys? sys;
-  int? timezone;
-  int? id;
+  num? timezone;
+  num? id;
   String? name;
-  int? cod;
+  num? cod;
 
   ApiCurrentWeatherData(
       {this.coord,

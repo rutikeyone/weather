@@ -17,20 +17,20 @@ class ApiHourly {
     required this.weather,
     required this.pop,
   });
-  late final int dt;
-  late final double temp;
-  late final double feelsLike;
-  late final int pressure;
-  late final int humidity;
-  late final double? dewPoint;
-  late final double? uvi;
-  late final int clouds;
-  late final int visibility;
-  late final double windSpeed;
-  late final int windDeg;
-  late final double? windGust;
-  late final List<ApiWeather> weather;
-  late final int? pop;
+  late final num? dt;
+  late final num? temp;
+  late final num? feelsLike;
+  late final num? pressure;
+  late final num? humidity;
+  late final num? dewPoint;
+  late final num? uvi;
+  late final num? clouds;
+  late final num? visibility;
+  late final num? windSpeed;
+  late final num? windDeg;
+  late final num? windGust;
+  late final List<ApiWeather>? weather;
+  late final num? pop;
 
   ApiHourly.fromJson(Map<String, dynamic> json) {
     dt = json['dt'];
@@ -64,7 +64,7 @@ class ApiHourly {
     _data['wind_speed'] = windSpeed;
     _data['wind_deg'] = windDeg;
     _data['wind_gust'] = windGust;
-    _data['weather'] = weather.map((e) => e.toJson()).toList();
+    _data['weather'] = weather!.map((e) => e.toJson()).toList();
     _data['pop'] = pop;
     return _data;
   }

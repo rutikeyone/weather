@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:weather_app/data/api/model/current_weather/api_current_weather_data.dart';
 import 'package:http/http.dart' as http;
-import 'package:weather_app/data/api/request/get_current_weather_body.dart';
+import 'package:weather_app/data/api/request/get_weather_body.dart';
 
 class CurrentWeatherService {
   Future<ApiCurrentWeatherData> getCurrentWeatherData(

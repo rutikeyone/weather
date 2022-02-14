@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/generated/l10n.dart';
 
-Row createDaysWeatherDataHeader({
+Row createHourliesWeatherDataHeader({
   required BuildContext context,
   required VoidCallback onNextClick,
 }) {

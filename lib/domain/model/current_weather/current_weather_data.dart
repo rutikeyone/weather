@@ -8,7 +8,7 @@ class CurrentWeatherData {
   Coord coord;
   Weather weather;
   Main main;
-  int visibility;
+  num visibility;
   Wind wind;
   DateTime date;
 

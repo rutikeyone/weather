@@ -1,12 +1,12 @@
 class Main {
-  num? temp;
-  num? feelsLike;
-  num? tempMin;
-  num? tempMax;
-  num? pressure;
-  num? humidity;
-  num? seaLevel;
-  num? grndLevel;
+  num temp;
+  num feelsLike;
+  num tempMin;
+  num tempMax;
+  num pressure;
+  num humidity;
+  num seaLevel;
+  num grndLevel;
 
   Main({
     required this.temp,

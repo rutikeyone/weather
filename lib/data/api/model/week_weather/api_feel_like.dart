@@ -1,23 +1,17 @@
-class ApiTemp {
-  ApiTemp({
+class ApiFeelsLike {
+  ApiFeelsLike({
     required this.day,
-    required this.min,
-    required this.max,
     required this.night,
     required this.eve,
     required this.morn,
   });
-  late final double day;
-  late final double min;
-  late final double max;
-  late final double night;
-  late final double eve;
-  late final double morn;
+  late final num? day;
+  late final num? night;
+  late final num? eve;
+  late final num? morn;
 
-  ApiTemp.fromJson(Map<String, dynamic> json) {
+  ApiFeelsLike.fromJson(Map<String, dynamic> json) {
     day = json['day'];
-    min = json['min'];
-    max = json['max'];
     night = json['night'];
     eve = json['eve'];
     morn = json['morn'];
@@ -26,8 +20,6 @@ class ApiTemp {
   Map<String, dynamic> toJson() {
     final _data = <String, dynamic>{};
     _data['day'] = day;
-    _data['min'] = min;
-    _data['max'] = max;
     _data['night'] = night;
     _data['eve'] = eve;
     _data['morn'] = morn;

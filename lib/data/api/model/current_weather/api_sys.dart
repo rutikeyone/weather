@@ -1,7 +1,7 @@
 class ApiSys {
   String? country;
-  int? sunrise;
-  int? sunset;
+  num? sunrise;
+  num? sunset;
 
   ApiSys({this.country, this.sunrise, this.sunset});
 
