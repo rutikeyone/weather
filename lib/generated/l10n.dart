@@ -190,11 +190,11 @@ class S {
     );
   }
 
-  /// `Next 16 days`
-  String get next_sixteen_text {
+  /// `Next 7 days`
+  String get next_seventh_text {
     return Intl.message(
-      'Next 16 days',
-      name: 'next_sixteen_text',
+      'Next 7 days',
+      name: 'next_seventh_text',
       desc: '',
       args: [],
     );

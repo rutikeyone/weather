@@ -9,12 +9,12 @@ import 'package:weather_app/domain/model/current_location/current_location_data.
 import 'package:weather_app/domain/model/current_weather/current_weather_data.dart';
 import 'package:weather_app/domain/model/week_weather/week_weather_data.dart';
 
-class Util {
+class ServiceUtils {
   final CurrentWeatherService currentWeatherService;
   final CurrentLocationService currentLocationService;
   final WeekWeatherService weekWeatherService;
 
-  Util({
+  ServiceUtils({
     required this.currentWeatherService,
     required this.currentLocationService,
     required this.weekWeatherService,

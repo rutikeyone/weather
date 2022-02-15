@@ -17,7 +17,7 @@ Row createHourliesWeatherDataHeader({
         child: Row(
           children: [
             Text(
-              S.of(context).next_sixteen_text,
+              S.of(context).next_seventh_text,
               style: Theme.of(context).textTheme.headline5,
             ),
             Icon(

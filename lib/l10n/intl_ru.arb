@@ -13,7 +13,7 @@
     "pressure" : "Давление",
     "pressure_example" : "1014 мбар",
     "today_text" : "Сегодня",
-    "next_sixteen_text" : "На 16 дней",
+    "next_seventh_text" : "На 7 дней",
     "details_weather_data_text": "Details weather data text",
     "error_message": "Уупс! Что-то пошло не так",
     "min" : "Мин",

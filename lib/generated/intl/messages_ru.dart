@@ -42,7 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "metricTemperature": MessageLookupByLibrary.simpleMessage("°C"),
         "metricWindSpeed": MessageLookupByLibrary.simpleMessage("м/сек"),
         "min": MessageLookupByLibrary.simpleMessage("Мин"),
-        "next_sixteen_text": MessageLookupByLibrary.simpleMessage("На 16 дней"),
+        "next_seventh_text": MessageLookupByLibrary.simpleMessage("На 7 дней"),
         "pressure": MessageLookupByLibrary.simpleMessage("Давление"),
         "pressure_example": MessageLookupByLibrary.simpleMessage("1014 мбар"),
         "temperature_example": MessageLookupByLibrary.simpleMessage("24°"),

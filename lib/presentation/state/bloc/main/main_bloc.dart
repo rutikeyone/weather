@@ -51,18 +51,15 @@ class MainBloc extends Bloc<MainEvent, MainState> {
                       longitude: _currentLocation.longitude,
                       units: _settings.units,
                     );
-
-            for (var item in _weekWeatherData.hourlies) {
-              print(item.hour);
-            }
-
             emit(
               MainLoadedState(
                 location: Location(
                   city: _currentLocation.city,
                   country: _currentLocation.country,
                 ),
-                hourlies: _weekWeatherData.hourlies,
+                hourlies: _weekWeatherData.hourlies
+                    .where((element) => element.hour % 2 == 0)
+                    .toList(),
                 data: _currentWeatherData,
                 settings: _settings,
               ),

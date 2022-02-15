@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/domain/model/day_data.dart';
 import 'package:weather_app/domain/model/location.dart';
 import 'package:weather_app/presentation/main_screen/view/main_error_view.dart';
 import 'package:weather_app/presentation/main_screen/view/main_loaded_view.dart';
@@ -32,6 +33,15 @@ class _MainScreenState extends State<MainScreen> {
             ),
             data: state.data,
             settings: state.settings,
+            daysData: state.hourlies
+                .map(
+                  (item) => DayData(
+                    url: item.weather.icon,
+                    temp: item.temp.toInt(),
+                    hour: item.hour,
+                  ),
+                )
+                .toList(),
           );
         }
         if (state is MainErrorState) {

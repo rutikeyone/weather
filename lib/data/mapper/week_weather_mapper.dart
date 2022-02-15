@@ -39,9 +39,9 @@ class WeekWeatherMapper {
               )
               .toList(),
         ),
-        hourlies: data.hourly!.length >= 12
+        hourlies: data.hourly!.length >= 24
             ? data.hourly!
-                .take(12)
+                .take(24)
                 .map(
                   (item) => Hourly(
                       hour: (DateTime.fromMillisecondsSinceEpoch(

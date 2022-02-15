@@ -16,8 +16,6 @@ class WeekWeatherService {
       _weekWeatherData = ApiWeekWeatherData.fromJson(data);
     }
 
-    print(_BASE_URL);
-
     return _weekWeatherData;
   }
 }

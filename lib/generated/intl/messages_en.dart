@@ -41,8 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "metricTemperature": MessageLookupByLibrary.simpleMessage("°C"),
         "metricWindSpeed": MessageLookupByLibrary.simpleMessage("m/sec"),
         "min": MessageLookupByLibrary.simpleMessage("Min"),
-        "next_sixteen_text":
-            MessageLookupByLibrary.simpleMessage("Next 16 days"),
+        "next_seventh_text":
+            MessageLookupByLibrary.simpleMessage("Next 7 days"),
         "pressure": MessageLookupByLibrary.simpleMessage("pressure"),
         "pressure_example": MessageLookupByLibrary.simpleMessage("1014 mbar"),
         "temperature_example": MessageLookupByLibrary.simpleMessage("24°"),
