@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
 import 'package:weather_app/data/repository/current_weather_data_repository.dart';
 import 'package:weather_app/domain/model/location.dart';

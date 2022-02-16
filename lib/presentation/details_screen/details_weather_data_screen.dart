@@ -40,10 +40,9 @@ class DetailsScreen extends StatelessWidget {
               ),
               Text(
                 S.of(context).next_seventh_text,
-                style: Theme.of(context)
-                    .textTheme
-                    .headline5!
-                    .copyWith(color: Theme.of(context).primaryColor),
+                style: Theme.of(context).textTheme.headline5!.copyWith(
+                      color: Theme.of(context).textTheme.bodyText1!.color,
+                    ),
               ),
               const SizedBox(
                 height: 20,

@@ -3,5 +3,8 @@ class Settings {
   bool isImperialUnits;
   String units;
 
-  Settings({required this.isImperialUnits, required this.units});
+  Settings({
+    required this.isImperialUnits,
+    required this.units,
+  });
 }

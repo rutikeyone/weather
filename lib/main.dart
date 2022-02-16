@@ -2,6 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:weather_app/data/repository/current_weather_data_repository.dart';
 import 'package:weather_app/internal/locator.dart';
 import 'package:weather_app/presentation/main_screen/main_screen.dart';
@@ -11,13 +12,19 @@ import 'package:weather_app/presentation/theme/light_theme.dart';
 import 'generated/l10n.dart';
 import 'presentation/state/bloc/main/main_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final savedThemeModel = await AdaptiveTheme.getThemeMode();
   setup();
-  runApp(const MyApp());
+  runApp(MyApp(
+    savedThemeModel: savedThemeModel,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  AdaptiveThemeMode? savedThemeModel;
+
+  MyApp({Key? key, required this.savedThemeModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +38,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: AdaptiveTheme(
-        initial: AdaptiveThemeMode.light,
+        initial: savedThemeModel ?? AdaptiveThemeMode.light,
         light: light,
         dark: dark,
         builder: (light, dark) => MaterialApp(
