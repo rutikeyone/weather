@@ -1,9 +1,11 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/domain/model/main_day_data.dart';
 import 'package:weather_app/domain/model/location.dart';
 import 'package:weather_app/domain/model/current_weather/current_weather_data.dart';
 import 'package:weather_app/domain/model/settings.dart';
+import 'package:weather_app/generated/l10n.dart';
 import 'package:weather_app/presentation/main_screen/components/hourlies_weather_data_header.dart';
 import 'package:weather_app/presentation/main_screen/components/hourly_weather_data_item.dart';
 import 'package:weather_app/presentation/main_screen/components/location_app_header.dart';
@@ -29,7 +31,11 @@ Scaffold createMainLoadedView({
           ChangeUnits(isImperialUnits: settings.isImperialUnits),
         );
       },
-      onThemeModeClick: () {},
+      onThemeModeClick: () async {
+        await AdaptiveTheme.getThemeMode() == AdaptiveThemeMode.light
+            ? AdaptiveTheme.of(context).setDark()
+            : AdaptiveTheme.of(context).setLight();
+      },
     ),
     body: SingleChildScrollView(
       child: Padding(
@@ -79,8 +85,11 @@ Scaffold createMainLoadedView({
                   itemCount: daysData.length,
                   itemBuilder: (context, index) => createHourlyWeatherDataItem(
                     context: context,
-                    hour: daysData[index].hour,
-                    temp: daysData[index].temp,
+                    hour: daysData[index].hour.toString() + ": 00",
+                    temp: daysData[index].temp.toString() +
+                        (settings.isImperialUnits
+                            ? S.of(context).imperialTemperature
+                            : S.of(context).metricTemperature),
                     url: daysData[index].url,
                   ),
                 ),

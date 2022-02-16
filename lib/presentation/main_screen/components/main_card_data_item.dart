@@ -5,20 +5,12 @@ Widget createMainCardDataItem({
   required String url,
   required String title,
   required String data,
+  required Border border,
 }) {
   return Expanded(
     child: Container(
       decoration: BoxDecoration(
-        border: Border(
-          top: BorderSide(
-            width: 1,
-            color: Theme.of(context).dividerColor,
-          ),
-          right: BorderSide(
-            width: 1.5,
-            color: Theme.of(context).dividerColor,
-          ),
-        ),
+        border: border,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),

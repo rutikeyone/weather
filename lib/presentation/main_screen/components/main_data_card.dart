@@ -72,6 +72,16 @@ Container createMainDataCard({
                       (isImperialUnits
                           ? S.of(context).imperialWindSpeed
                           : S.of(context).metricWindSpeed),
+                  border: Border(
+                    top: BorderSide(
+                      width: 1,
+                      color: Theme.of(context).dividerColor,
+                    ),
+                    right: BorderSide(
+                      width: 1.5,
+                      color: Theme.of(context).dividerColor,
+                    ),
+                  ),
                 ),
                 createMainCardDataItem(
                   context: context,
@@ -81,6 +91,12 @@ Container createMainDataCard({
                       (isImperialUnits
                           ? S.of(context).imperialTemperature
                           : S.of(context).metricTemperature),
+                  border: Border(
+                    top: BorderSide(
+                      width: 1,
+                      color: Theme.of(context).dividerColor,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -94,6 +110,16 @@ Container createMainDataCard({
                       (isImperialUnits
                           ? S.of(context).imperialTemperature
                           : S.of(context).metricTemperature),
+                  border: Border(
+                    top: BorderSide(
+                      width: 1,
+                      color: Theme.of(context).dividerColor,
+                    ),
+                    right: BorderSide(
+                      width: 1.5,
+                      color: Theme.of(context).dividerColor,
+                    ),
+                  ),
                 ),
                 createMainCardDataItem(
                   context: context,
@@ -103,6 +129,12 @@ Container createMainDataCard({
                       (isImperialUnits
                           ? S.of(context).imperialTemperature
                           : S.of(context).metricTemperature),
+                  border: Border(
+                    top: BorderSide(
+                      width: 1,
+                      color: Theme.of(context).dividerColor,
+                    ),
+                  ),
                 ),
               ],
             ),
