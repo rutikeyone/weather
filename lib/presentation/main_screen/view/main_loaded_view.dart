@@ -1,17 +1,14 @@
-import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/domain/model/day_data.dart';
+import 'package:weather_app/domain/model/main_day_data.dart';
 import 'package:weather_app/domain/model/location.dart';
 import 'package:weather_app/domain/model/current_weather/current_weather_data.dart';
 import 'package:weather_app/domain/model/settings.dart';
-import 'package:weather_app/generated/l10n.dart';
 import 'package:weather_app/presentation/main_screen/components/hourlies_weather_data_header.dart';
 import 'package:weather_app/presentation/main_screen/components/hourly_weather_data_item.dart';
 import 'package:weather_app/presentation/main_screen/components/location_app_header.dart';
 import 'package:weather_app/presentation/main_screen/components/main_app_bar.dart';
 import 'package:weather_app/presentation/main_screen/components/main_data_card.dart';
-import 'package:weather_app/presentation/next_screen/details_weather_data_screen.dart';
 import 'package:weather_app/presentation/state/bloc/main/main_bloc.dart';
 
 Scaffold createMainLoadedView({
@@ -19,7 +16,8 @@ Scaffold createMainLoadedView({
   required Location location,
   required CurrentWeatherData data,
   required Settings settings,
-  required List<DayData> daysData,
+  required List<MainDayData> daysData,
+  required VoidCallback onNextClick,
 }) {
   return Scaffold(
     backgroundColor: Theme.of(context).backgroundColor,
@@ -32,8 +30,6 @@ Scaffold createMainLoadedView({
         );
       },
       onThemeModeClick: () {},
-      onFavouriteClick: () {},
-      onSearchClick: () {},
     ),
     body: SingleChildScrollView(
       child: Padding(
@@ -68,14 +64,9 @@ Scaffold createMainLoadedView({
               height: 30,
             ),
             createHourliesWeatherDataHeader(
-                context: context,
-                onNextClick: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => DetailsScreen(),
-                    ),
-                  );
-                }),
+              context: context,
+              onNextClick: onNextClick,
+            ),
             const SizedBox(
               height: 10,
             ),

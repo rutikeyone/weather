@@ -90,9 +90,11 @@ class WeekWeatherMapper {
                     pop: item.pop!))
                 .toList(),
         dailies: data.daily!
+            .skip(1)
             .map(
               (item) => Daily(
-                dt: item.dt!,
+                date: DateTime.fromMillisecondsSinceEpoch(
+                    item.dt!.toInt() * 1000),
                 sunrise: item.sunrise!,
                 sunset: item.sunset!,
                 moonrise: item.moonrise!,

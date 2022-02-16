@@ -5,7 +5,7 @@ import 'temp.dart';
 import 'weather.dart';
 
 class Daily {
-  final num dt;
+  final DateTime date;
   final num sunrise;
   final num sunset;
   final num moonrise;
@@ -25,7 +25,7 @@ class Daily {
   final num uvi;
 
   Daily({
-    required this.dt,
+    required this.date,
     required this.sunrise,
     required this.sunset,
     required this.moonrise,

@@ -1,10 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
 import 'package:weather_app/data/repository/current_weather_data_repository.dart';
 import 'package:weather_app/domain/model/location.dart';
 import 'package:weather_app/domain/model/current_weather/current_weather_data.dart';
 import 'package:weather_app/domain/model/settings.dart';
+import 'package:weather_app/domain/model/week_weather/daily.dart';
 import 'package:weather_app/domain/model/week_weather/hourly.dart';
 import 'package:weather_app/internal/current_location_di/current_location_controller.dart';
 import 'package:weather_app/internal/current_weather_di/current_weather_controller.dart';
@@ -51,6 +54,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
                       longitude: _currentLocation.longitude,
                       units: _settings.units,
                     );
+
             emit(
               MainLoadedState(
                 location: Location(
@@ -62,6 +66,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
                     .toList(),
                 data: _currentWeatherData,
                 settings: _settings,
+                dailies: _weekWeatherData.dailies,
               ),
             );
           } catch (e) {

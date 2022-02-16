@@ -13,6 +13,7 @@ class MainLoadingState extends MainState {}
 
 class MainLoadedState extends MainState {
   final CurrentWeatherData data;
+  final List<Daily> dailies;
   final List<Hourly> hourlies;
   final Location location;
   final Settings settings;
@@ -24,6 +25,7 @@ class MainLoadedState extends MainState {
     required this.data,
     required this.settings,
     required this.hourlies,
+    required this.dailies,
   });
 }
 

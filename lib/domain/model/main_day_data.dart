@@ -1,9 +1,9 @@
-class DayData {
+class MainDayData {
   final String url;
   final int temp;
   final int hour;
 
-  DayData({
+  MainDayData({
     required this.url,
     required this.temp,
     required this.hour,

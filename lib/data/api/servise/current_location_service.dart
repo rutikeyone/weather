@@ -1,5 +1,6 @@
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/data/api/model/current_location/api_current_location_data.dart';
 
 class CurrentLocationService {
@@ -23,8 +24,10 @@ class CurrentLocationService {
     Position _currentPosition =
         await Geolocator.getCurrentPosition(forceAndroidLocationManager: true);
     List<Placemark> placemarks = await placemarkFromCoordinates(
-        _currentPosition.latitude, _currentPosition.longitude,
-        localeIdentifier: "usa");
+      _currentPosition.latitude,
+      _currentPosition.longitude,
+      localeIdentifier: Intl.defaultLocale,
+    );
     return ApiCurrentLocationData(
         latitude: _currentPosition.latitude,
         longitude: _currentPosition.longitude,

@@ -44,7 +44,7 @@ Container createMainDataCard({
               height: 5,
             ),
             Text(
-              "${DateFormat('EEEE').format(date)}, ${date.day} ${DateFormat('MMMM').format(date)}",
+              "${StringUtils.capitalize((DateFormat('EEEE').format(date)))}, ${date.day} ${StringUtils.capitalize((DateFormat('MMM').format(date)))}",
               style: Theme.of(context).textTheme.bodyText2,
             ),
             const SizedBox(

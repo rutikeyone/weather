@@ -18,7 +18,7 @@ Padding createHourlyWeatherDataItem({
         child: Column(
           children: [
             Text(
-              hour.toString(),
+              hour.toString() + ":00",
               style: Theme.of(context).textTheme.headline6,
             ),
             const SizedBox(
