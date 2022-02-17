@@ -5,12 +5,20 @@ A mobile application that allows you to find out the weather by the user's locat
 ## Screenshots
 
 <p align="center">
-<img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/1.png" width="250"/>
-<img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/2.png" width="250"/>
-<img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/3.png" width="250"/>
+<img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/1.png" width="250"/>
+<img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/2.png" width="250"/>
+<img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/3.png" width="250"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/4.png" width="250"/>
+<img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/5.png" width="250"/>
+<img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/6.png" width="250"/>
 </p>
 
 ## Video
+[![Watch the video]()](https://www.youtube.com/watch?v=g_YWoz0y5jk)
+
 
 ## What functionality does the application provide to the user?
 
