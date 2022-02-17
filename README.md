@@ -25,7 +25,8 @@ A mobile application that allows you to find out the weather by the user's locat
 ### The user can:
 * Get the current weather
 * Get the weather for seven days
-* Change themes
+* Support changing dark/light theme
+* Support changing russian/english language
 * Use imperial/metric units
 
 ## Building the Code
