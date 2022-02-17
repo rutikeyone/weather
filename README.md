@@ -32,7 +32,7 @@ A mobile application that allows you to find out the weather by the user's locat
 ## Building the Code
 
 1. Clone the repository using HTTP: git clone https://github.com/RuTiKeyOne/Weather
-2. Open Android Studio/Visual studio Code.
+2. Open Android Studio/Visual Studio Code.
 
 3. Click on 'Open the project folder'
 
