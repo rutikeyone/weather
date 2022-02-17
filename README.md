@@ -17,6 +17,8 @@ A mobile application that allows you to find out the weather by the user's locat
 </p>
 
 ## Video
+[![Watch the video]()](https://www.youtube.com/watch?v=g_YWoz0y5jk)
+
 
 ## What functionality does the application provide to the user?
 
