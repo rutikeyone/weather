@@ -1,16 +1,34 @@
-# weather_app
+# Weather mobile application
 
-A new Flutter project.
+A mobile application that allows you to find out the weather by the user's location at the current time and for the next seven days.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+<p align="center">
+<img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/1.png" width="250"/>
+<img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/2.png" width="250"/>
+<img src="https://github.com/RuTiKeyOne/RickAndMorty/blob/main/doc/Screenshots/3.png" width="250"/>
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+## Video
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## What functionality does the application provide to the user?
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### The user can:
+* Get the current weather
+* Get the weather for seven days
+* Change themes
+* Use imperial/metric units
+
+## Building the Code
+
+1. Clone the repository using HTTP: git clone https://github.com/RuTiKeyOne/Weather
+2. Open Android Studio/Visual studio Code.
+
+3. Click on 'Open the project folder'
+
+4. Browse to the directory where you cloned the mobile-wallet repo and click OK.
+
+5. Let Android Studio/Visual Studio Code import the project.
+
+6. Build the application in your device by clicking run button.
