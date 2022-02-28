@@ -4,10 +4,10 @@ import 'package:weather_app/domain/model/current_location/current_location_data.
 class CurrentLocationMapper {
   static CurrentLocationData fromApi(ApiCurrentLocationData data) {
     return CurrentLocationData(
-      latitude: data.latitude!.roundToDouble(),
-      longitude: data.longitude!.roundToDouble(),
-      city: data.city!,
-      country: data.country!,
+      latitude: data.latitude != null ? data.latitude!.roundToDouble() : 0.0,
+      longitude: data.longitude != null ? data.longitude!.roundToDouble() : 0.0,
+      city: data.city ?? "",
+      country: data.country ?? "",
     );
   }
 }
