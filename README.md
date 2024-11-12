@@ -1,3 +1,4 @@
+![GitHub](https://img.shields.io/github/license/IgorVolochay/Face-recognition?style=flat-square&color=blue) &nbsp;
 # Weather mobile application
 
 A mobile application that allows you to find out the weather by the user's location at the current time and for the next seven days.
