@@ -18,9 +18,11 @@ A mobile application that allows you to find out the weather by the user's locat
 <img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/6.png" width="250"/>
 </p>
 
-## Video
-[![Watch the video](https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/videoscreenshot.PNG)](https://www.youtube.com/watch?v=g_YWoz0y5jk)
+## Video with an example of the work
 
+<a href="https://www.youtube.com/watch?v=g_YWoz0y5jk">
+  <img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/1.png" width="250" />
+</a>
 
 ## What functionality does the application provide to the user?
 
