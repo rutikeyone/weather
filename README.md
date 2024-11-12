@@ -1,17 +1,18 @@
 ![GitHub](https://img.shields.io/github/license/IgorVolochay/Face-recognition?style=flat-square&color=blue) &nbsp;
 # Weather mobile application
 
+## Description
 A mobile application that allows you to find out the weather by the user's location at the current time and for the next seven days.
 
 ## Screenshots
 
-<p align="center">
+<p align="start">
 <img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/1.png" width="250"/>
 <img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/2.png" width="250"/>
 <img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/3.png" width="250"/>
 </p>
 
-<p align="center">
+<p align="start">
 <img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/4.png" width="250"/>
 <img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/5.png" width="250"/>
 <img src="https://github.com/RuTiKeyOne/Weather/blob/main/doc/screenshots/6.png" width="250"/>
