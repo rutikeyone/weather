@@ -4,6 +4,14 @@
 ## Description
 A mobile application that allows you to find out the weather by the user's location at the current time and for the next seven days.
 
+## Technologies used
+* `Dart`;
+* `Flutter`;
+* `Http`;
+* `Geolocator`;
+* `Geocoding`;
+* `Shared preferenses`.
+
 ## Features
 * `Get the current weather`;
 * `Get the weather for seven days`;
